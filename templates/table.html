@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table Booking</title>
+  <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <style>
+    @font-face {
+      font-family: 'Inter-Regular';
+      src: url(/static/fonts/Inter-Regular.ttf);
+    }
+    @font-face {
+        font-family: 'Inter-SemiBold';
+        src: url(/static/fonts/Inter-SemiBold.ttf);
+    }
+    @font-face {
+      font-family: 'Newsreader-Medium';
+      src: url(/static/fonts/Newsreader_9pt-Medium.ttf);
+    }
+    @font-face {
+      font-family: 'Newsreader-Regular';
+      src: url(/static/fonts/Newsreader_9pt-Regular.ttf);
+    }
+
+    .table-container {
+      width: 70%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      margin-left: 5%;
+      float: left;
+    }
+    
+    .table {
+      width: 150px;
+      height: 150px;
+      background-color: #426B1F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 48px;
+      color:white;
+      font-family: "Newsreader", serif;
+      transition-property: background-color, transform;
+      transition-duration: 0.5s;
+    }
+    .table:hover{
+      background-color: #1f2f11;
+      transform: scale(1.2);
+    }
+
+    .table.booked {
+      background-color: #FF0000 !important;
+    }
+    
+    
+    .header__top {
+      position: fixed;
+      height: 112px;
+      width: 100%;
+      left: 0px;
+      background: #FFFFFF;
+      top: 0px;
+      border: 1px solid #000000;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .header__top-logo {
+      position: absolute;
+      width: 125px;
+      height: 32px;
+      left: 5%;
+      top: 20px;
+      
+    }
+    .header__top-logo-text {
+      font-family: "Newsreader-Medium";
+      font-size: 26px;
+      line-height: 100%;
+      letter-spacing: -0.01em;
+      color: #426B1F;
+      text-align: center;
+      
+    }
+    .header__top-logo-link {
+    text-decoration: none;
+    }
+    .header__top-list {
+     
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 10%;
+      height: 21px;
+      margin-top: 45.5px;
+      list-style: none;
+    }
+    .header__top-list-item {
+      margin-right: 50px;
+    }
+    .header__top-list-link {
+      font-family: "Inter-Regular";
+      font-size: 16px;
+      line-height: 130%;
+      position: relative;
+      color: #000000;
+      text-decoration: none;
+    }
+    .header__top-button {
+      position: absolute;
+      width: 126px;
+      height: 48px;
+      right: 3%;
+      top: 32px;
+      background: #426B1F;
+      border: 1px;
+      border-radius: 8px;
+      font-family: "Inter-SemiBold";
+      font-size: 16px;
+      line-height: 130%;
+      align-items: center;
+      text-align: center;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    .header__top-button:hover {
+      background-color: #1f2f11;
+    }
+    .header__top-button-link {
+      text-decoration: none;
+    }
+    .header__top-button-link:visited {
+      color: #FFFFFF;
+    }
+    .conteiner__booking {
+      padding-top: 112px;
+    }
+    .divider {
+      border: 2px solid #E6E6E6;
+      margin-bottom: 20px;
+      margin-left: 4%;
+      margin-right: 4%;
+    }
+    h1 {
+      font-family: "Newsreader-Regular";
+      font-size: 64px;
+      line-height: 100%;
+      color: black;
+      display: flex;
+      align-items: flex-end;
+      letter-spacing: -0.02em;
+      height: 77px;
+      margin-left: 4%;
+      bottom: 16px;
+    }
+    /* Styling for the modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    
+    .modal-content {
+      width: 300px;
+      padding: 20px;
+      background-color: #FAFAF5;
+      border-radius: 24px;
+    }
+    .booking_instuction {
+      float: right;
+      position: relative;
+      margin-right: 5%;
+      width: 20%;
+    }
+    .booking_instuction-head {
+      font-family: "Newsreader-Medium";
+      font-size: 26px;
+      color: #426B1F;
+      padding-bottom: 10px;
+    }
+    .booking_instuction-text {
+      font-family: "Inter-Regular";
+      font-size: 20px;
+      color: #1f2f11;
+    }
+    
+    @media screen and (max-width: 1920px) {
+      .header__top-list {
+        margin-right: 20%;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="header__top">
+    <div class="header__top-logo">
+      <a class="header__top-logo-link" href="#">
+        <p class="header__top-logo-text">New York</p>
+      </a>
+    </div>
+    <nav class="header__top-menu" id ="menu">
+        <ul class="header__top-list">
+            <li class="header__top-list-item">
+                <a class="header__top-list-link active" href="/">About us</a>
+            </li>
+            <li class="header__top-list-item">
+                <a class="header__top-list-link" href="/dist/index.html" href="#menu">Menu</a>
+            </li>
+            <li class="header__top-list-item">
+                <a class="header__top-list-link" href="#discounts">Discounts</a>
+            </li>
+            <li class="header__top-list-item">
+                <a class="header__top-list-link" href="#myProfile">My profile</a>
+            </li>
+        </ul>
+        
+    </nav>
+    <button class="header__top-button"> 
+        <a  class="header__top-button-link" href="/book-table">Book table</a>
+    </button>
+</div>
+<div class="conteiner__booking">
+  <h1>Tables</h1>
+  <div class="divider"></div> <!-- Divider -->
+  
+  <div id="tables" class="table-container">
+    <div id="table-1" class="table" onclick="openModal(1)">1</div>
+    <div id="table-2" class="table" onclick="openModal(2)">2</div>
+    <div id="table-3" class="table" onclick="openModal(3)">3</div>
+    <div id="table-4" class="table" onclick="openModal(4)">4</div>
+    <div id="table-5" class="table" onclick="openModal(5)">5</div>
+    <div id="table-6" class="table" onclick="openModal(6)">6</div>
+    <div id="table-7" class="table" onclick="openModal(7)">7</div>
+    <div id="table-8" class="table" onclick="openModal(8)">8</div>
+    <div id="table-9" class="table" onclick="openModal(9)">9</div>
+  </div>
+
+  <div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Book Table <span id="table-number"></span></h2>
+      <form onsubmit="return confirmBooking(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+        
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required><br>
+        
+        <label for="start-time">Booking Start Time:</label>
+        <input type="datetime-local" id="start-time" required><br>
+        
+        <label for="end-time">Booking End Time:</label>
+        <input type="datetime-local" id="end-time" required><br>
+
+        <input type="submit" value="Book">
+      </form>
+      <button onclick="closeModal()">Close</button>
+      <button onclick="getBooking()">Bookings</button>
+    </div>
+  </div>
+  <div class="booking_instuction">
+      <h3 class="booking_instuction-head"> Booking </h3>
+      <p class="booking_instuction-text"> Lorem Ipsumfasfsaff saf saf ajsifh asihfiasf hisa jfisajf isaj fiajsi jasi as as fas fjasiof jsaiof jaosifj oasjfo asjofjaso joas jfo sfs jas of joasjfoasof jas</p>
+  </div>
+</div>
+  <script src="{{ url_for('static', filename='booking.js') }}"></script>
+</body>
+</html>
