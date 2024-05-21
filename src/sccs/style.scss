@@ -1,0 +1,85 @@
+@import "reset";
+
+@font-face {
+    font-family: 'Inter-Black';
+    src: url(fonts/Inter-Black.ttf);
+}
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url(fonts/Inter-Bold.ttf);
+}
+@font-face {
+    font-family: 'Inter-ExtraBold';
+    src: url(fonts/Inter-ExtraBold.ttf);
+}
+@font-face {
+    font-family: 'Inter-ExtraLight';
+    src: url(fonts/Inter-ExtraLight.ttf);
+}
+@font-face {
+    font-family: 'Inter-Light';
+    src: url(fonts/Inter-Light.ttf);
+}
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url(fonts/Inter-Medium.ttf);
+}
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url(fonts/Inter-Regular.ttf);
+}
+@font-face {
+    font-family: 'Inter-SemiBold';
+    src: url(fonts/Inter-SemiBold.ttf);
+}
+@font-face {
+    font-family: 'Inter-Thin';
+    src: url(fonts/Inter-Thin.ttf);
+}
+@font-face {
+    font-family: 'Merienda-Black';
+    src: url(fonts/Merienda-Black.ttf);
+}
+@font-face {
+    font-family: 'Merienda-Bold';
+    src: url(fonts/Merienda-Bold.ttf);
+}
+@font-face {
+    font-family: 'Merienda-ExtraBold';
+    src: url(fonts/Merienda-ExtraBold.ttf);
+}
+@font-face {
+    font-family: 'Merienda-Light';
+    src: url(fonts/Merienda-Light.ttf);
+}
+@font-face {
+    font-family: 'Merienda-Medium';
+    src: url(./fonts/Merienda-Medium.ttf);
+}
+@font-face {
+    font-family: 'Merienda-Regular';
+    src: url(fonts/Merienda-Regular.ttf);
+}
+@font-face {
+    font-family: 'Merienda-SemiBold';
+    src: url(fonts/Merienda-SemiBold.ttf);
+}
+@font-face {
+    font-family: 'Newsreader-Medium';
+    src: url(fonts/Newsreader_9pt-Medium.ttf);
+}
+@font-face {
+    font-family: 'Newsreader-Regular';
+    src: url(fonts/Newsreader_9pt-Regular.ttf);
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@import "header";
+@import "aboutUs";

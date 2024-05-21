@@ -1,0 +1,117 @@
+.aboutUs{
+    max-height: 1104px;
+    width: 100%;
+    background-color: black;
+    
+
+    &__introduction {
+        //width: 673px;
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 180px;
+        &-firstText {
+            font-family: 'Inter-Medium';
+            font-size: 20px;
+            line-height: 130%;
+            color: #FFFFFF;
+            padding-top: 257px;
+            text-align: center;
+            
+        }
+        &-secondText {
+            font-family: 'Inter-Black';
+            font-size: 40px;
+            line-height: 130%;
+            display: flex;
+            align-items: flex-end;
+            color: #FFFFFF;
+            text-align: center;
+            
+        }
+        &-content {
+           // padding-left: 406px;
+            padding-top: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &-title {
+            font-family: 'Inter-ExtraBold';
+            font-size: 36px;
+            line-height: 160%;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #000000;
+            background: #D9D9D9;
+            border-radius: 28.5px;
+            text-align: center;
+            width: 255px;
+            height: 57px;
+            margin-bottom: 20px;
+        }
+        &-text {
+            width: 100%;
+            max-width: 655px;
+            height: auto;
+            font-family: 'Inter-SemiBold';
+            font-size: 24px;
+            line-height: 160%;
+            letter-spacing: 0.04em;
+            text-align: justify;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            
+        }
+    }
+
+}
+@media screen and (max-width: 1100px) {
+    .aboutUs {
+        &__introduction {
+            padding-top: 150px;
+
+            &-content{
+                padding-top: 90px;
+            }
+            &-firstText{
+                padding-top: 20px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 750px) {
+    .aboutUs {
+        &__introduction {
+            padding-top: 150px;
+            margin-left: 6%;
+            margin-right: 6%;
+            &-content{
+                //padding-top: 90px;
+                margin-left: 6%;
+                margin-right: 6%;
+            }
+            &-firstText{
+                padding-top: 20px;
+                font-size: 14px;
+                
+            }
+            &-secondText{
+                font-size: 20px;
+            }
+            &-title {
+                font-size: 21px;
+                width: 150px;
+                height: 47px;
+                padding-top: 5px;
+            }
+            &-text {
+                font-size: 18px;
+                
+            }
+        }
+    }
+}
